@@ -10,12 +10,12 @@ function convertToObject(sourceString) {
     .split(';')
     .map((styles) => styles.trim())
     .filter((styles) => styles.length > 0)
-    .reduce((object, item) => {
+    .reduce((stylesObject, item) => {
       const [key, value] = item.split(':').map((str) => str.trim());
 
-      object[key] = value;
+      stylesObject[key] = value;
 
-      return object;
+      return stylesObject;
     }, {});
 
   return result;
